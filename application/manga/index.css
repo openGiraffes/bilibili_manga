@@ -1,0 +1,100 @@
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+#softkeys {
+  z-index: 100;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background: #dadada;
+  padding: 3px 5px;
+}
+
+#softkeys > * {
+  display: inline-block;
+  width: 72px;
+  padding: 0 5px;
+}
+
+#softkey-left,
+#softkey-right {
+  font-weight: 400;
+  font-size: 14px;
+  color: #323232;
+  line-height: 24px;
+  text-align: left;
+}
+
+#softkey-right {
+  text-align: right;
+  line-height: 24px;
+}
+
+#softkey-center {
+  font-weight: 600;
+  font-size: 16px;
+  width: 76px;
+  color: #323232;
+  text-align: center;
+}
+
+.items,
+.info {
+  width: 100%;
+  height: calc(100% - 60px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  top: 30px;
+  z-index: 1;
+  display: none;
+}
+
+.item,
+.infoitem {
+  width: 100%;
+  background-color: white;
+  outline: none;
+  text-align: center;
+  margin: 0 auto;
+  padding: 6px;
+  white-space: nowrap;
+}
+.info .infoitem {
+  white-space: unset;
+}
+.item:focus,
+.item.select,
+.infoitem:focus,
+.infoitem.select {
+  background-color: #d26585;
+  color: white;
+}
+
+.tab {
+  width: 100%;
+  height: 30px;
+  position: fixed;
+  top: 0px;
+  background-color: white;
+  z-index: 2;
+}
+
+.tab li {
+  float: left;
+  list-style: none;
+  margin: 7.5;
+  font-size: 14px;
+  position: relative;
+  top: -3px;
+}
+
+.focus {
+  border-bottom: 3px solid #d26585;
+}

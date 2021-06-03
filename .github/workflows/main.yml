@@ -1,0 +1,32 @@
+name: Package OmniSD zip nightly
+
+on:
+  schedule:
+    - cron: "0 22 * * *"  # scheduled at 06:00 (UTC+8) everyday
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Package application.zip
+        run: |
+          ls application
+          cd application
+          zip -r application.zip ./*
+          mv application.zip ../application.zip
+          cd ..
+          zip -r bilibili_manga-omnisd-nightly.zip application.zip metadata.json
+          mkdir workdir
+          mv application.zip workdir/application.zip
+          mv metadata.json workdir/metadata.json
+
+      - name: Build artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: bilibili_manga-omnisd-nightly
+          path: ./workdir/*
+          

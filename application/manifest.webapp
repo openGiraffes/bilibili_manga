@@ -1,0 +1,42 @@
+{
+  "name": "bilibili manga",
+  "subtitle": "bilibili manga(third-part)",
+  "description": "bilibili manga for KaiOS",
+  "version": "1.0.2",
+  "launch_path": "/index.html",
+  "type": "privileged",
+  "origin": "app://kai.michael.bilibili",
+  "icons": {
+    "56": "/img/icons/icon56x56.png",
+    "112": "/img/icons/icon112x112.png",
+    "128": "/img/icons/icon128x128.png"
+  },
+  "developer": {
+    "name": "michael_eddy",
+    "url": "http://manga.bilibili.com"
+  },
+  "permissions": {
+    "calllog": {},
+    "wifidata": {},
+    "attention": {},
+    "mobiledata": {},
+    "device-storage:sdcard": { "access": "readwrite" },
+    "device-storage:pictures": { "access": "readwrite" },
+    "mobilenetwork": { "description": "Required data from http" },
+    "browser": { "description": "Required for browsing webpages" },
+    "systemXHR": {
+      "description": "Required for autocompletion when searching"
+    }
+  },
+  "fullscreen": false,
+  "ime_default_softkey_bar": true,
+  "theme_color": "#d26585",
+  "default_locale": "zh-CN",
+  "locales": {
+    "zh-CN": {
+      "name": "哔哩哔哩漫画",
+      "subtitle": "哔哩哔哩漫画(第三方)",
+      "description": "哔哩哔哩漫画KaiOS版"
+    }
+  }
+}
