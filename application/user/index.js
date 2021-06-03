@@ -142,7 +142,7 @@ function logout() {
         localStorage.removeItem('userInfo');
     }
 }
-var current = -1, menuIndex = 0;
+var current = -1, menuIndex = -1;
 function nav(move) {
     if (!isOpen) {
         var next = current + move;

@@ -43,3 +43,27 @@
   color: #323232;
   text-align: center;
 }
+
+.items {
+  width: 100%;
+  height: calc(100% - 30px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  z-index: 1;
+}
+
+.item {
+  width: 100%;
+  background-color: white;
+  outline: none;
+  text-align: center;
+  margin: 0 auto;
+  padding: 6px;
+}
+
+.item:focus,
+.item.select {
+  background-color: #d26585;
+  color: white;
+}
