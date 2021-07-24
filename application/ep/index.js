@@ -9,6 +9,9 @@ $(function () {
         if (scrollPosition * 1.2 >= contentHeight)
             getImageUrl();
     };
+    window.onclose = function () {
+        addHistory();
+    };
     document.activeElement.addEventListener('keydown', handleKeydown);
 });
 function loadData() {
@@ -103,8 +106,15 @@ function getImageUrl() {
         }
         else {
             hasMore = false;
+            addHistory();
         }
     }
+}
+function addHistory() {
+    var bid = $.getQueryVar('bid');
+    var url = 'https://manga.bilibili.com/twirp/bookshelf.v1.Bookshelf/AddHistory';
+    var content = 'comic_id=' + bid + '&ep_id=' + id;
+    $.postApi(url, content);
 }
 function handleKeydown(e) {
     switch (e.key) {
