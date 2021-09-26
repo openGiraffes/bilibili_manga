@@ -55,8 +55,6 @@ function clockIn() {
     }
 }
 function handleKeydown(e) {
-    if (e.key != "EndCall")
-        e.preventDefault();
     switch (e.key) {
         case 'ArrowUp':
             nav(-1);
